@@ -1,0 +1,66 @@
+import React from "react";
+import { useState } from "react";
+import { assets, categories } from "./../assets/assets";
+// import { categories } from "assets";
+
+const BgSlider = () => {
+  const [sliderPosition, setSliderPosition] = useState(50);
+  const [activeCategory, setActiveCategory] = useState("People");
+
+  const handleSliderChange = (e) => {
+    setSliderPosition(e.target.value);
+  };
+  return (
+    <div className="mb-16 relative">
+      <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center">
+        Stunning quality.
+      </h2>
+      {/* category selector */}
+      <div className="flex justify-center mb-10 flex-wrap">
+        <div className="inline-flex gap-4 bg-gray-100 p-2 rounded-full flex-wrap justify-center">
+          {categories.map((category) => (
+            <button
+              key={category}
+              className={`px-6 py-2 rounded-full font-medium ${
+                activeCategory === category
+                  ? "bg-white text-gray-800 shadow-sm"
+                  : "text-gray-600 hover:bg-gray-200"
+              }`}
+              onClick={() => setActiveCategory(category)}
+            >
+              {category}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      {/* image comparison slider */}
+      <div className="relative w-full max-w-4xl overflow-hidden m-auto rounded-xl shadow-lg">
+        <img
+          src={assets.people_org}
+          alt="original image"
+          style={{ clipPath: `inset(0 ${100.2 - sliderPosition}% 0 0)` }}
+        />
+
+        <img
+          src={assets.people}
+          alt="removed background image"
+          style={{ clipPath: `inset(0 0 0 ${sliderPosition}%)` }}
+          className="absolute top-0 left-0 w-full h-full"
+        />
+
+          <input type="range"
+            className="absolute top-0.5 left-0.5 transform -translate-0.5 -translate-0.5 w-full z-10 slider"
+
+            min={0}
+            max={100}
+            onChange={handleSliderChange}
+            value={sliderPosition}
+          />
+
+      </div>
+    </div>
+  );
+};
+
+export default BgSlider;
