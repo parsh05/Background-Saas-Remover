@@ -7,7 +7,13 @@ const Header = () => {
       {/* left side video_banner content */}
       <div className="order-2 md:order-1 flex justify-center">
         <div className="shadow-[0.25px_50px_-12px_rgba(0,0,0,0.15)] rounded-3xl overflow-hidden">
-          <video src={assets.video_banner} autoPlay loop muted className="w-full max-w-[400px] h-auto object-cover"></video>
+          <video
+            src={assets.video_banner}
+            autoPlay
+            loop
+            muted
+            className="w-full max-w-[400px] h-auto object-cover"
+          ></video>
         </div>
       </div>
 

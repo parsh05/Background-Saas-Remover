@@ -2,6 +2,9 @@ import React from "react";
 import Header from "./Header";
 import BgRemovalSteps from "./BgRemovalSteps";
 import BgSlider from "./BgSlider";
+import Pricing from "./Pricing";
+import Testimonials from './Testimonials';
+import TryNow from './TryNow';
 
 const Home = () => {
   return (
@@ -9,8 +12,11 @@ const Home = () => {
       {/* Hero Section */}
       <Header />
       {/* Background removal Steps section */}
-      <BgRemovalSteps></BgRemovalSteps>
-      <BgSlider></BgSlider>
+      <BgRemovalSteps />
+      <BgSlider />
+      <Pricing />
+      <Testimonials />
+      <TryNow />
     </div>
   );
 };

@@ -7,3 +7,31 @@ body{
   padding: 0;
   font-family: 'Outfit', sans-serif;
 }
+
+.slider{
+  -webkit-appearance: none;
+  height: 100%;
+  background: transparent;
+}
+
+.slider::-webkit-slider-thumb{
+  appearance: none;
+  width: 30px;
+  min-height: 30px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-image: url("../src/assets/slide_icon.svg");
+}
+
+.slider::-moz-range-thumb{
+  width: 30px;
+  min-height: 30px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-image: url("../src/assets/slide_icon.svg");
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+}

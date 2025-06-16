@@ -40,7 +40,7 @@ const BgSlider = () => {
           src={assets.people_org}
           alt="original image"
           style={{ clipPath: `inset(0 ${100.2 - sliderPosition}% 0 0)` }}
-        />
+        /> 
 
         <img
           src={assets.people}
@@ -50,7 +50,7 @@ const BgSlider = () => {
         />
 
           <input type="range"
-            className="absolute top-0.5 left-0.5 transform -translate-0.5 -translate-0.5 w-full z-10 slider"
+            className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full z-10 slider"
 
             min={0}
             max={100}
