@@ -3,7 +3,8 @@ import { assets } from "./../assets/assets";
 
 const Header = () => {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-16">
+    <div 
+      className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-16">
       {/* left side video_banner content */}
       <div className="order-2 md:order-1 flex justify-center">
         <div className="shadow-[0.25px_50px_-12px_rgba(0,0,0,0.15)] rounded-3xl overflow-hidden">
@@ -30,7 +31,7 @@ const Header = () => {
         </p>
 
         <div>
-          <input type="file" name="image/*" id="upload1" hidden />
+          <input type="file" accept="image/*" id="upload1" hidden />
           <label
             htmlFor="upload1"
             className="bg-black text-white font-medium px-8 py-4 rounded-full hover:opacity-90 transition-transform hover:scale-105 text-lg"

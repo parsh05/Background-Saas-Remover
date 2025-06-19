@@ -4,10 +4,12 @@ import Home from "./components/Home";
 import Footer from "./components/Footer";
 import { Routes, Route } from "react-router-dom";
 import { Toaster } from "./../node_modules/react-hot-toast/src/components/toaster";
+import UserSyncHandler from './components/UserSyncHandler';
 
 function App() {
   return (
     <div>
+      <UserSyncHandler />
       <Menubar />
       <Toaster />
       <Routes>

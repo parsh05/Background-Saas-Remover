@@ -8,18 +8,19 @@ import {
   SignInButton,
   UserButton,
 } from "@clerk/clerk-react";
-import { useClerk } from "@clerk/clerk-react";
-import { useUser } from "@clerk/clerk-react";
+import { useClerk, useUser } from "@clerk/clerk-react";
+
 
 const Menubar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const { openSignIn, openSignUp } = useClerk();
+
+  const { user } = useUser();
+
   const openRegister = () => {
     setMenuOpen(false);
     openSignUp({});
   };
-
-  const { user } = useUser();
 
   const openLogin = () => {
     setMenuOpen(true);
@@ -64,6 +65,7 @@ const Menubar = () => {
                 Credits: 0
               </p>
             </button>
+
             <p className="text-gray-600 max-sm:hidden">Hi, {user?.fullName}</p>
           </div>
           <UserButton />
@@ -111,9 +113,7 @@ const Menubar = () => {
 
             <div className="flex items-center justify-evenly">
               <UserButton />
-              <p className="text-gray-600 min-md:hidden">
-                {user?.firstName}
-              </p>
+              <p className="text-gray-600 min-md:hidden">{user?.firstName}</p>
             </div>
           </SignedIn>
         </div>
