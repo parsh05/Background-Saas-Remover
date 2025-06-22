@@ -1,11 +1,11 @@
-import React, {useContext} from "react";
+import React, { useContext } from "react";
 import { plans } from "./../assets/assets";
 import { useAuth } from "@clerk/clerk-react";
 import { useClerk } from "@clerk/clerk-react";
 import { placeOrder } from "./../service/OrderService";
 import { AppContext } from "./../context/AppContext";
 
-const Pricing = () => {
+const BuyCredits = () => {
   const { isSignedIn, getToken } = useAuth();
   const { openSignIn } = useClerk();
 
@@ -22,7 +22,7 @@ const Pricing = () => {
       onSuccess: () => {
         loadUserCredits();
       },
-      backendUrl
+      backendUrl,
     });
   };
 
@@ -75,7 +75,10 @@ const Pricing = () => {
                     {plan.description}
                   </li>
                 </ul>
-                <button className="w-full py-3 px-6 text-center text-white font-semibold rounded-full bg-gradient-to-r from-purple-500 shadow-lg hover:from-purple-600 hover:to-purple-600" onClick= {()=> handleOrder(plan.id)}>
+                <button
+                  className="w-full py-3 px-6 text-center text-white font-semibold rounded-full bg-gradient-to-r from-purple-500 shadow-lg hover:from-purple-600 hover:to-purple-600"
+                  onClick={() => handleOrder(plan.id)}
+                >
                   Choose plan
                 </button>
               </div>
@@ -87,4 +90,4 @@ const Pricing = () => {
   );
 };
 
-export default Pricing;
+export default BuyCredits;
