@@ -19,7 +19,7 @@ const Pricing = () => {
     placeOrder({
       planId,
       getToken,
-      onSuccess: () => {
+      onSuccess : () => {
         loadUserCredits();
       },
       backendUrl

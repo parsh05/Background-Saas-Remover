@@ -3,7 +3,7 @@ import people from "./people.png";
 import people_org from "./people-org.png";
 import video_banner from "./home-page-banner.mp4";
 import slider from "./slide_icon.svg";
-import credits  from "./credits.png";
+import credits from "./credits.png";
 
 export const assets = {
   logo,
@@ -11,7 +11,7 @@ export const assets = {
   people,
   people_org,
   slider,
-  credits
+  credits,
 };
 
 export const steps = [
@@ -41,17 +41,17 @@ export const plans = [
   {
     id: 1,
     name: "Basic",
-    price: "Free",
-    credits: 5,
+    price: "₹499",
+    credits: 100,
     description:
-      "Try out the service with 5 free background removals. Ideal for occasional users.",
+      "Try out the service with 100 background removals. Ideal for occasional users.",
     popular: false,
   },
   {
     id: 2,
     name: "Pro",
-    price: "₹199",
-    credits: 100,
+    price: "₹849",
+    credits: 250,
     description:
       "Great for content creators and freelancers who need frequent background removal.",
     popular: true,
@@ -59,8 +59,8 @@ export const plans = [
   {
     id: 3,
     name: "Enterprise",
-    price: "₹699",
-    credits: 500,
+    price: "₹1499",
+    credits: 1000,
     description:
       "Perfect for businesses and agencies with high-volume image editing needs.",
     popular: false,
@@ -109,6 +109,3 @@ export const FOOTER_CONSTANTS = [
     logo: "https://img.icons8.com/fluent/30/000000/linkedin.png",
   },
 ];
-
-
- 
