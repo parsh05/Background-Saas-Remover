@@ -9,8 +9,8 @@ import in.parshant.backend.repository.OrderRepository;
 import in.parshant.backend.service.RazorpayService;
 import in.parshant.backend.service.UserService;
 import lombok.RequiredArgsConstructor;
-import lombok.Value;
 import org.json.JSONObject;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
@@ -37,7 +37,7 @@ public class RazorpayServiceImpl implements RazorpayService {
         try {
             RazorpayClient razorpayClient = new RazorpayClient(razorpayKeyId, razorpayKeySecret);
             JSONObject orderRequest = new JSONObject();
-            orderRequest.put("amount", amount * 100);
+            orderRequest.put("amount", amount*100);
             orderRequest.put("currency", currency);
             orderRequest.put("receipt", "order_rcptid_" + System.currentTimeMillis());
             orderRequest.put("payment_capture", 1);

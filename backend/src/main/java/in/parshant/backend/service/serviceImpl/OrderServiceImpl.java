@@ -22,9 +22,9 @@ public class OrderServiceImpl implements OrderService {
     private final OrderRepository orderRepository;
 
     private static  final Map<String, PlanDetails> PLAN_DETAILS = Map.of(
-            "Basic", new PlanDetails("Basic", 100, 499.00),
-            "Premium", new PlanDetails("Premium", 250, 899.00),
-            "Ultimate", new PlanDetails("Ultimate", 1000, 1499.00)
+            "1", new PlanDetails("Basic", 100, 499.00),
+            "2", new PlanDetails("Premium", 250, 899.00),
+            "3", new PlanDetails("Ultimate", 1000, 1499.00)
     );
 
     private record PlanDetails(String name, int credits, double amount) {
@@ -35,7 +35,7 @@ public class OrderServiceImpl implements OrderService {
     public Order createOrder(String planId, String clerkId) throws RazorpayException {
         PlanDetails details = PLAN_DETAILS.getOrDefault(planId, null);
         if (details == null) {
-            throw new IllegalArgumentException("Invalid planId" + planId);
+            throw new IllegalArgumentException("Invalid planId " + planId);
         }
         try {
             Order razorpayOrder = razorpayService.createOrder(details.amount, "INR");

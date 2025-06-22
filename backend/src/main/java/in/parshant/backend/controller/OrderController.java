@@ -31,7 +31,7 @@ public class OrderController {
 
         try {
             if (authentication.getName() == null || authentication.getName().isEmpty()) {
-                RemoveBgResponse.builder()
+                response = RemoveBgResponse.builder()
                         .statusCode(HttpStatus.FORBIDDEN)
                         .success(false)
                         .data("User does not have access/permission to this resource")
@@ -40,7 +40,7 @@ public class OrderController {
             }
             Order order = orderService.createOrder(planId, authentication.getName());
             RazorpayOrderDTO responseDTO = convertToDTO(order);
-            RemoveBgResponse.builder()
+            response = RemoveBgResponse.builder()
                     .success(true)
                     .data(responseDTO)
                     .statusCode(HttpStatus.CREATED)
@@ -60,7 +60,8 @@ public class OrderController {
 
     private RazorpayOrderDTO convertToDTO(Order order) {
         return RazorpayOrderDTO.builder()
-                .id(order.get("entity"))
+                .id(order.get("id"))
+                .entity(order.get("entity"))
                 .amount(order.get("amount"))
                 .currency(order.get("currency"))
                 .status(order.get("status"))
