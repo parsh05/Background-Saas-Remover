@@ -1,18 +1,36 @@
 import logo from "./logo.png";
 import people from "./people.png";
 import people_org from "./people-org.png";
-import video_banner from "./home-page-banner.mp4";
+import animal from "./animal.png";
+import animal_org from "./animal-org.jpg";
+import car from "./car.png";
+import car_org from "./car-org.jpg";
+import product from "./product.png";
+import product_org from "./product_org.png";
+import graphics from "./graphic.png";
+import graphics_org from "./graphic-org.png";
+
+import video_banner from "./removebackground-animation_h-264.mp4";
 import slider from "./slide_icon.svg";
 import credits from "./credits.png";
 
 export const assets = {
   logo,
   video_banner,
-  people,
-  people_org,
   slider,
   credits,
 };
+
+export const categoryImages = {
+  people: { original: people_org, processed: people },
+  products: { original: product_org, processed: product },
+  animals: { original: animal_org, processed: animal },
+  cars: { original: car_org, processed: car },
+  graphics: { original: graphics_org, processed: graphics },
+};
+
+// Keep category keys lowercase
+export const categories = ["people", "products", "animals", "cars", "graphics"];
 
 export const steps = [
   {
@@ -34,8 +52,6 @@ export const steps = [
       "After the background is removed, you’ll get a clean preview of your new image. Choose from multiple download formats, such as transparent PNG or white background JPG, and save it directly to your device — ready for social media, design work, or professional use.",
   },
 ];
-
-export const categories = ["people", "Products", "Animals", "Cars", "Graphics"];
 
 export const plans = [
   {
@@ -105,7 +121,7 @@ export const FOOTER_CONSTANTS = [
     logo: "https://img.icons8.com/fluent/30/000000/twitter.png",
   },
   {
-    url: "https://www.linkedin.com/parshant05",
+    url: "https://www.linkedin.com/in/parshant05/",
     logo: "https://img.icons8.com/fluent/30/000000/linkedin.png",
   },
 ];

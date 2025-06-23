@@ -38,7 +38,7 @@ const Menubar = () => {
           className="h-8 w-8 object-contain cursor-pointer"
         />
         <span className="text-2xl font-semibold text-indigo-700 cursor-pointer">
-          remove.<span className="text-gray-400 cursor-pointer">bg</span>
+          removebg.<span className="text-gray-400 cursor-pointer">ai</span>
         </span>
       </Link>
 
