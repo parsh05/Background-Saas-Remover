@@ -21,8 +21,6 @@ target/
 
 ### Environment Files ###
 .env
-frontend/.env
-backend/.env
 
 ### NetBeans ###
 /nbproject/private/
